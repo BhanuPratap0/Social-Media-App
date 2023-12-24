@@ -74,7 +74,7 @@ router.get("/:id", async (req, res) => {
 
 //get all posts of the users following(Timeline)
 
-router.get("/timeline/:userID", async (req, res) => {
+router.get("/timeline/:userId", async (req, res) => {
 
     try {
         const currentUser = await User.findById(req.params.userId);
