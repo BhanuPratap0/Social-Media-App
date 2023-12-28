@@ -8,7 +8,10 @@ const connectDB = require('./db');
 const userRoutes = require('./routes/usersRoutes') 
 const authRoutes = require('./routes/authRoutes') 
 const postRoutes = require('./routes/postRoutes') 
+var cors = require('cors')
 
+app.use(cors())
+app.use(express.json())
 
 dotenv.config();
 connectDB();
