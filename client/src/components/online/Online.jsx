@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './online.css'
 
 const Online = ({ user }) => {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER_URL;
+
   return (
     <div>
       <Link to={"/profile/"+user.username} style={{textDecoration:"none", color:"black"}}  >

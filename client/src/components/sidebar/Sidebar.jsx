@@ -1,6 +1,6 @@
 import { Bookmark, Chat, Event, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, WorkOutline } from '@mui/icons-material'
 import './sidebar.css'
-import CloseFriend from '../closeFriend/CloseFriend'
+// import CloseFriend from '../closeFriend/CloseFriend'
 
 
 const Sidebar = () => {

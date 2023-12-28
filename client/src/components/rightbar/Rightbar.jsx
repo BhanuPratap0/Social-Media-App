@@ -1,5 +1,4 @@
 import './rightbar.css'
-import { Users } from '../../dummyData'
 import Online from '../online/Online'
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
@@ -8,9 +7,9 @@ import { AuthContext } from '../../context/AuthContext';
 import { Add, Remove } from '@mui/icons-material';
 
 const Rightbar = ({ user }) => {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER_URL;
+
   const [friends, setFriends] = useState([]);
-  const { user: currentUser, dispatch } = useContext(AuthContext);
+  const { user: currentUser } = useContext(AuthContext);
   const [followed, setFollowed] = useState(currentUser.followings.includes(user?.id));
 
 
@@ -104,9 +103,7 @@ const Rightbar = ({ user }) => {
             <Link to={"/profile/" + friend.username} style={{ textDecoration: "none" }} >
               <div className="rightbarFollowing">
                 <img
-                  src={friend.profilePicture
-                    ? friend.profilePicture
-                    : PF + "person/1.jpeg"}
+                  src={friend.profilePicture}
                   alt=""
                   className="rightbarFollowingImg" />
                 <span className="rightbarFollowingName">John Doe</span>

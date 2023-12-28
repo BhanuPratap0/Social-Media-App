@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 
 const Post = ({post}) => {
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER_URL;
+
     const [like, setLike] = useState(post.likes.length);
     const [isLike, setIsLike] = useState(false);
     const [user, setUser] = useState({})
@@ -61,8 +61,8 @@ const Post = ({post}) => {
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <img src={`${PF}like.png`} alt="" className="likeIcon" onClick={handleLike} />
-                        <img src={`${PF}heart.png`} alt="" className="likeIcon" onClick={handleLike} />
+                        <img src={`./images/like.png`} alt="" className="likeIcon" onClick={handleLike} />
+                        <img src={`./images/heart.png`} alt="" className="likeIcon" onClick={handleLike} />
                         <span className="postLikeCounter">{like} people like it</span>
                     </div>
                     <div className="postBottomRight">

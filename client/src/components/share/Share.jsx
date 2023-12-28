@@ -1,6 +1,6 @@
 import { Cancel, EmojiEmotions, Label, PermMedia, Room } from '@mui/icons-material'
 import './share.css'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
 import Snackbar from '@mui/joy/Snackbar';
@@ -25,7 +25,7 @@ const Share = () => {
   };
 
   const { user:currentUser, setPostChange } = useContext(AuthContext);
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER_URL;
+
   const[imageData,setImageData] = useState("");
 
 
@@ -63,10 +63,7 @@ const Share = () => {
   const deleteFile = async (e) =>{
     e.preventDefault();
     try {
-      const id = {
-        public_id: imageData,
-      }
-      console.log(imageData);
+      
       const responce = await axios.delete("/post/delete-image/" + imageData);
       console.log(responce);
       setFile("");
@@ -116,7 +113,7 @@ const Share = () => {
         <hr className='shareHr' />
         {file && (
           <div className="shareImgContainer">
-            <img src={file}  className="shareImg" />
+            <img src={file} alt={file}  className="shareImg" />
             <Cancel className='shareCancelImg' onClick={deleteFile} />
           </div>
         )}

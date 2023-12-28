@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom'
 
 
 const Profile = () => {
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER_URL;
+
     const [user, setUser] = useState({})
     const username = useParams().username;
 

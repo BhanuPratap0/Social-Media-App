@@ -9,7 +9,7 @@ const Login = () => {
 
   const email = useRef();
   const password = useRef();
-  const { isFetching, user, error, dispatch } = useContext(AuthContext);
+  const { isFetching, user, dispatch } = useContext(AuthContext);
 
 
 

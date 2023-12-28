@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './register.css'
 import { useRef, useState } from 'react';
 import axios from 'axios';
-import { Alert, Button, CircularProgress, Snackbar } from '@mui/material';
+import { Alert, CircularProgress, Snackbar } from '@mui/material';
 
 const Register = () => {
   const [isLoading, setIsLoading] = useState(false);
