@@ -22,7 +22,7 @@ app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/post', postRoutes);
 
-const PORT = 8800;
+const PORT = process.env.PORT || 8800;
 app.listen(PORT, ()=>{
     console.log(`Backend Server is Running! on post: ${PORT} `)
 })
