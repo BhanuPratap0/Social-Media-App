@@ -21,11 +21,11 @@ const UserSchema = new mongoose.Schema({
     },
     profilePicture: {
         type: String,
-        default: ""
+        default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
     },
     coverPicture: {
         type: String,
-        default: ""
+        default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
     },
     followers: {
         type: Array,
@@ -52,8 +52,8 @@ const UserSchema = new mongoose.Schema({
         max: 50
     },
     relationship: {
-        type: Number,
-        enum: [1, 2, 3],
+        type: String,
+        default : ""
     },
 },
     { timestamps: true }

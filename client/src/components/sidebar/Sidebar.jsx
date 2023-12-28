@@ -1,7 +1,7 @@
 import { Bookmark, Chat, Event, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, WorkOutline } from '@mui/icons-material'
 import './sidebar.css'
 import CloseFriend from '../closeFriend/CloseFriend'
-import {Users} from '../../dummyData'
+
 
 const Sidebar = () => {
   return (
@@ -47,11 +47,11 @@ const Sidebar = () => {
         </ul>
         <button className="sidebarButton">Show More</button>
         <hr className='sidebarHr'/>
-        <ul className="sidebarFriendList">
+        {/* <ul className="sidebarFriendList">
           { Users.map(u=>(
             <CloseFriend key={u.id} user={u} /> 
           )) }         
-        </ul>
+        </ul> */}
       </div>
     </div>
   )

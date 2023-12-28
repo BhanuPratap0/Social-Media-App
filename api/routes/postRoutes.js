@@ -1,6 +1,29 @@
 const router = require("express").Router();
 const Post = require('../models/Post')
 const User = require('../models/User')
+var cloudinary = require('cloudinary').v2;
+
+
+cloudinary.config({
+    cloud_name: 'dns2pagvz',
+    api_key: '786853166771752',
+    api_secret: '7nLAicQ70OW-fgaYCur-m31nYTk'
+});
+
+//delete a image
+router.delete("/delete-image/:id", async (req, res) => {
+    try {
+        const public_id = req.params.id;
+        cloudinary.uploader.destroy(public_id, 
+            function (result) { console.log(result) });
+        res.status(200).json("Image Deleted");
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
+
+
+
 
 //create a post
 router.post("/", async (req, res) => {
@@ -89,5 +112,20 @@ router.get("/timeline/:userId", async (req, res) => {
         res.status(500).json(error);
     }
 })
+
+//get user posts only
+router.get("/profile/:username", async (req, res) => {
+
+    try {
+        const user = await User.findOne({ username: req.params.username })
+        const posts = await Post.find({ userId: user._id });
+        res.status(200).json(posts);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+
+})
+
+
 
 module.exports = router;
