@@ -61,8 +61,8 @@ const Post = ({post}) => {
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <img src={`./images/like.png`} alt="" className="likeIcon" onClick={handleLike} />
-                        <img src={`./images/heart.png`} alt="" className="likeIcon" onClick={handleLike} />
+                        <img src={require(`../images/like.png`)} alt="" className="likeIcon" onClick={handleLike} />
+                        <img src={require(`../images/heart.png`)} alt="" className="likeIcon" onClick={handleLike} />
                         <span className="postLikeCounter">{like} people like it</span>
                     </div>
                     <div className="postBottomRight">

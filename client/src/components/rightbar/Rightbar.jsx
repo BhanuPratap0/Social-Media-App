@@ -42,7 +42,7 @@ const Rightbar = ({ user }) => {
     return (
       <>
         <div className="birthdayContainer">
-          <img className='birthdayImg' src="/assests/gift.png" alt="" />
+          <img className='birthdayImg' src={require("../images/gift.png")} alt="" />
           <span className="birthdayText"><b>John doe</b> and <b>3 other friends </b> have birthday today</span>
         </div>
         <img className='rightbarAd' src="/assests/ad.jpg" alt="" />
