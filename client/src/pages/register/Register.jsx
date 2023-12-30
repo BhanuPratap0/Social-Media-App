@@ -96,7 +96,7 @@ const Register = () => {
         relationship: relationship.current.value,
       }
       try {
-        await axios.post("/auth/register", user);
+        await axios.post("https://social-media-gfgj.onrender.com/api/auth/register", user);
         history("/login");
       } catch (error) {
         console.log(error);
@@ -118,7 +118,7 @@ const Register = () => {
     <div className='register'>
       <div className="RegisterWrapper">
         <div className="loginLeft">
-          <h3 className='loginLogo' >Bhanusocial</h3>
+          <h3 className='loginLogo' >SociSync</h3>
           <span className="loginDesc">Connect with friends and the world around you on Bhanusocial</span>
         </div>
         <div className="loginRight">
@@ -133,11 +133,11 @@ const Register = () => {
             <input type="text" ref={city} placeholder='City' className='loginInput' />
 
             <select ref={relationship} className='loginInput'>
-              <option disabled selected>Relationship</option>
-              <option value="Single">Single</option>
-              <option value="Not Single">Not Single</option>
-              <option value="Married">Married</option>
-              <option value="">Prefer Not To Say</option>
+              <option className='loginInput'  disabled selected>Relationship</option>
+              <option className='loginInput' value="Single">Single</option>
+              <option className='loginInput' value="Not Single">Not Single</option>
+              <option className='loginInput' value="Married">Married</option>
+              <option className='loginInput' value="">Prefer Not To Say</option>
             </select>
 
             <label htmlFor='file' style={{ display: "flex", justifyContent: "space-between" }} className='loginInput' >

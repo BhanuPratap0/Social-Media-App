@@ -5,6 +5,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import './App.css'
 
 
 function App() {
@@ -13,9 +14,9 @@ function App() {
 
   return (
     <Routes>
-      <Route exact path="/" element={user ? <Home /> : <Register />} ></Route>
-      <Route exact path="/login" element={user ? <Navigate to={"/"} />: <Login />} ></Route>
-      <Route exact path="/register" element={user ? <Navigate to={"/"} /> : <Register />} ></Route>
+      <Route exact path="/" element={user ? <Home /> : <Login />} ></Route>
+      <Route exact path="/login" element={<Login />} ></Route>
+      <Route exact path="/register" element={<Register />} ></Route>
       <Route exact path="/profile/:username" element={<Profile />} ></Route>
     </Routes>
   );

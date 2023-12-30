@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
+import { format } from "timeago.js";
 
 const Post = ({post}) => {
 
@@ -17,7 +18,7 @@ const Post = ({post}) => {
     }, [currentUser._id, post.likes]);
     useEffect(() => {
         const fetchUser = async() =>{
-          const res = await axios.get(`/user?userId=${post.userId}`);
+          const res = await axios.get(`https://social-media-gfgj.onrender.com/api/user?userId=${post.userId}`);
           setUser(res.data);
         };
         fetchUser();
@@ -28,7 +29,7 @@ const Post = ({post}) => {
     const handleLike = () => {
 
         try {
-            axios.put("/post/" + post._id + "/like", {userId: currentUser._id});
+            axios.put("https://social-media-gfgj.onrender.com/api/post/" + post._id + "/like", {userId: currentUser._id});
         } catch (error) {
             
         }
@@ -49,7 +50,7 @@ const Post = ({post}) => {
                         <span className="postUsername">
                             {user.username}
                         </span>
-                        
+                        <span className="postDate">{format(post.createdAt)}</span>
                     </div>
                     <div className="postTopRight">
                         <MoreVert />
